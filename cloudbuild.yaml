@@ -1,84 +1,11 @@
 steps:
-# running docker-compose
-#STEP 00
-# - id: 'Step 00 - Realizando docker-compose up'
-#   name: 'gcr.io/$PROJECT_ID/docker-compose:1.24.0'
-#   args: ['-f', './laravel/docker-compose.cloudbuild.yaml', 'up', '-d']
-# - id: "Step 00 - Realizando docker-compose up"
-#   name: 'docker/compose'
-#   args: ['up', '-d']
-
-# - id: go_version
-#   name: "gcr.io/cloud-builders/go"
-#   args: ['version']
-#   env: ["GOPATH=."]
-
-# - id: go_test
-#   name: "gcr.io/cloud-builders/go"
-#   args: ["test"]
-#   env: ["GOPATH=."]
-
-steps:
-# see https://www.npmjs.com/package/editorconfig-checker
-# - id: eclint
-#   name: "e53e225/editorconfig-checker"
-
-# - id: go_version
-#   name: "gcr.io/cloud-builders/go"
-#   args: ["version"]
-#   env: ["GOPATH=."]
-
-# - id: go_linter
-#   name: "golangci/golangci-lint"
-#   args: ["golangci-lint","run"]
-
 - id: Run test
   name: "gcr.io/cloud-builders/go"
   args: ["test"]
-  env: ["GOPATH=."]
-
-# - id: go_security
-#   name: "securego/gosec"
-#   args: ["helloworld"]
-#   env: ["GOPATH=."]
+  # env: ["GOPATH=."]
 
 - id: Run the program
   name: "gcr.io/cloud-builders/go"
   args: ["run","main.go"]
-  env: ["GOPATH=."]
+  # env: ["GOPATH=."]
 
-
-
-
-
-
-
-# #STEP 01 ACCESS ROOT
-# - id: "Step 01 - Execute Teste"
-#   name: 'gcr.io/cloud-builders/go'
-#   args: ['app','chown','-R','www-data:www-data','/var/www']
-  
-# #STEP 02
-# - id: 'Step 02 - Rodando composer install'
-#   name: 'gcr.io/cloud-builders/docker'
-#   args: ['exec', '-t', 'app', 'composer', 'install']
-
-# #STEP 04
-# - id: 'Step 04 - Copiando .env'
-#   name: 'gcr.io/cloud-builders/docker'
-#   args: ['exec', '-t', 'app', 'cp', '.env.example', '.env']
-
-# #STEP 05
-# - id: 'Step 05 - Key generate'
-#   name: 'gcr.io/cloud-builders/docker'
-#   args: ['exec', '-t', 'app', 'php', '/var/www/artisan', 'key:generate']
-
-# #STEP 06
-# - id: 'Step 06 - Migrations'
-#   name: 'gcr.io/cloud-builders/docker'
-#   args: ['exec', '-t', 'app', 'php', '/var/www/artisan', 'migrate']
-
-# #STEP 07
-# - id: 'Step 07 - Executar'
-#   name: 'gcr.io/cloud-builders/docker'
-#   args: ['exec', '-t', 'app', 'php', '/var/www/vendor/bin/phpunit', '-c', '/var/www/phpunit.xml']
