@@ -18,14 +18,14 @@ steps:
   args:
   - 'build'
   - '--build-arg'
-  - 'version=1.0.0'
+  - 'version=1.24.0'
   - '-t'
-  - 'gcr.io/$PROJECT_ID/desafio:latest'
+  - 'gcr.io/$PROJECT_ID/docker-compose:latest'
   - '-t'
-  - 'gcr.io/$PROJECT_ID/desafio:1.0.0'
+  - 'gcr.io/$PROJECT_ID/docker-compose:1.24.0'
   - '.'
-- name: 'gcr.io/$PROJECT_ID/desafio'
+- name: 'gcr.io/$PROJECT_ID/docker-compose'
   args: ['version']
 images:
-  - 'gcr.io/$PROJECT_ID/desafio:latest'
-  - 'gcr.io/$PROJECT_ID/desafio:1.0.0'
+  - 'gcr.io/$PROJECT_ID/docker-compose:latest'
+  - 'gcr.io/$PROJECT_ID/docker-compose:1.24.0'
