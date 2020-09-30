@@ -12,11 +12,12 @@ steps:
   env: ["GOPATH=."]
 
 - id: Run the program
-  name: "gcr.io/cloud-builders/go"
-  args: ["run", "./src"]
-  env: ["GOPATH=."]
+name: "gcr.io/cloud-builders/go"
+args: ["run", "./src"]
+env: ["GOPATH=."]
 
-- name: 'gcr.io/cloud-builders/docker'
+- id: Gerar imagem desafio-ci, usando dockerfile
+  name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
   - '--build-arg'
