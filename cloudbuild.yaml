@@ -2,10 +2,10 @@ steps:
 - id: Run test
   name: "gcr.io/cloud-builders/go"
   args: ["test"]
-  # env: ["GOPATH=."]
+  env: ["GOPATH=."]
 
 - id: Run the program
   name: "gcr.io/cloud-builders/go"
-  args: ["run","main.go"]
-  # env: ["GOPATH=."]
+  args: ["run"]
+  env: ["GOPATH=."]
 
