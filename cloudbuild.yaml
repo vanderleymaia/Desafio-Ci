@@ -26,9 +26,11 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/desafio-ci:1.0.0'
   - '.'
-- name: 'gcr.io/$PROJECT_ID/desafio-ci:latest'
-  args: ["version"]
-  env: ["GOPATH=."]
+
+- id: Test Image
+  name: 'gcr.io/$PROJECT_ID/desafio-ci:latest'
+  args: ["run", "./src/desafioci"]  
+  
 images:
   - 'gcr.io/$PROJECT_ID/desafio-ci:latest'
   - 'gcr.io/$PROJECT_ID/desafio-ci:1.0.0'
