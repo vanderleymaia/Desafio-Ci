@@ -29,8 +29,8 @@ steps:
 
 - id: Test Image
   name: 'gcr.io/$PROJECT_ID/desafio-ci:latest'
-  args: ["version"]
-  # env: ["GOPATH=."]
+  args: ["run", "main.go"]
+  env:  ["GOPATH=.src"]
   # args: ["go", "run", "main.go"]  
   # # env: ["GOPATH=."]
 
