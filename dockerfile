@@ -1,6 +1,6 @@
 FROM golang:latest
 
-WORKDIR $GOPATH
+WORKDIR $GOPATH/src
 
 COPY . .
 
