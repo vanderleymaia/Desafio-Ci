@@ -5,7 +5,7 @@ steps:
   args: ["test","./src"]
   env: ["GOPATH=."]
 
-- id: Run the program
+- id: Run the program (optional)
   name: "gcr.io/cloud-builders/go"
   args: ["run", "./src"]
   env: ["GOPATH=."]
