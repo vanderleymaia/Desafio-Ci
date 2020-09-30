@@ -4,19 +4,54 @@ steps:
 # - id: 'Step 00 - Realizando docker-compose up'
 #   name: 'gcr.io/$PROJECT_ID/docker-compose:1.24.0'
 #   args: ['-f', './laravel/docker-compose.cloudbuild.yaml', 'up', '-d']
-- id: "Step 00 - Realizando docker-compose up"
-  name: 'docker/compose'
-  args: ['up', '-d']
+# - id: "Step 00 - Realizando docker-compose up"
+#   name: 'docker/compose'
+#   args: ['up', '-d']
+
+# - id: go_version
+#   name: "gcr.io/cloud-builders/go"
+#   args: ['version']
+#   env: ["GOPATH=."]
+
+# - id: go_test
+#   name: "gcr.io/cloud-builders/go"
+#   args: ["test"]
+#   env: ["GOPATH=."]
+
+steps:
+# see https://www.npmjs.com/package/editorconfig-checker
+# - id: eclint
+#   name: "e53e225/editorconfig-checker"
 
 - id: go_version
   name: "gcr.io/cloud-builders/go"
-  args: ['version']
+  args: ["version"]
   env: ["GOPATH=."]
+
+- id: go_linter
+  name: "golangci/golangci-lint"
+  args: ["golangci-lint","run"]
 
 - id: go_test
   name: "gcr.io/cloud-builders/go"
   args: ["test"]
   env: ["GOPATH=."]
+
+- id: go_security
+  name: "securego/gosec"
+  args: ["helloworld"]
+  env: ["GOPATH=."]
+
+- id: your_step_here
+  name: "gcr.io/cloud-builders/go"
+  args: ["run"]
+  env: ["GOPATH=."]
+
+
+
+
+
+
 
 # #STEP 01 ACCESS ROOT
 # - id: "Step 01 - Execute Teste"
