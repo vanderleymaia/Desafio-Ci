@@ -1,6 +1,6 @@
 FROM golang:latest
 
-WORKDIR $GOPATH/src/desafioci
+WORKDIR $GOPATH
 
 COPY . .
 
