@@ -30,7 +30,7 @@ steps:
 - id: Test Image
   name: 'gcr.io/$PROJECT_ID/desafio-ci:latest'
   args: ["go", "run", "main.go"]  
-  env: ["GOPATH=."]
+  # env: ["GOPATH=."]
 
 images:
   - 'gcr.io/$PROJECT_ID/desafio-ci:latest'
