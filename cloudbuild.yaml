@@ -1,20 +1,14 @@
 steps:
 
-# - id: "Realizando docker-compose up"
-#   name: 'docker/compose'
-#   args: ['up', '-d']
-
-
-
-- id: Run test
+  - id: Run test
   name: "gcr.io/cloud-builders/go"
   args: ["test","./src"]
   env: ["GOPATH=."]
 
 - id: Run the program
-name: "gcr.io/cloud-builders/go"
-args: ["run", "./src"]
-env: ["GOPATH=."]
+  name: "gcr.io/cloud-builders/go"
+  args: ["run", "./src"]
+  env: ["GOPATH=."]
 
 - id: Gerar imagem desafio-ci, usando dockerfile
   name: 'gcr.io/cloud-builders/docker'
