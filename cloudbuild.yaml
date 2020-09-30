@@ -1,8 +1,8 @@
 steps:
 
-- id: "Realizando docker-compose up"
-  name: 'docker/compose'
-  args: ['up', '-d']
+# - id: "Realizando docker-compose up"
+#   name: 'docker/compose'
+#   args: ['up', '-d']
 
 - id: Run test
   name: "gcr.io/cloud-builders/go"
