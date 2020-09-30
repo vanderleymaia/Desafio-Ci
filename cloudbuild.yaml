@@ -10,7 +10,7 @@ steps:
 
 - id: go_version
   name: "gcr.io/cloud-builders/go"
-  args: ['app','version']
+  args: ['version']
   env: ["GOPATH=."]
 
 # #STEP 01 ACCESS ROOT
