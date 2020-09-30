@@ -11,7 +11,7 @@ steps:
 - id: go_version
   name: "gcr.io/cloud-builders/go"
   args: ['app','version']
-  env: ["GOPATH=."
+  env: ["GOPATH=."]
 
 # #STEP 01 ACCESS ROOT
 # - id: "Step 01 - Execute Teste"
