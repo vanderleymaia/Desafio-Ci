@@ -13,4 +13,4 @@ RUN go install -v ./...
 # This container exposes port 8080 to the outside world
 EXPOSE 8080
 
-CMD ["go", "run", "main.go"]
+# CMD ["go", "run", "main.go"]
