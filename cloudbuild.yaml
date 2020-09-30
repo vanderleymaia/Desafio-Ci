@@ -26,8 +26,8 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/desafio-ci:1.0.0'
   - '.'
-- name: 'gcr.io/$PROJECT_ID/desafio-ci'
-  args: ['version']
+# - name: 'gcr.io/$PROJECT_ID/desafio-ci'
+#   args: ['version']
 images:
   - 'gcr.io/$PROJECT_ID/desafio-ci:latest'
   - 'gcr.io/$PROJECT_ID/desafio-ci:1.0.0'
